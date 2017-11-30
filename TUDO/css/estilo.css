@@ -1,0 +1,78 @@
+body {
+	background: #1E3849;
+	height: 900px;
+	overflow: hidden;
+}
+
+
+.main {
+	background: black;
+	background-image: url("../Img/estadio.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: 0px -200px;
+	height: 100%;
+	/* usamos pra estourar o limite da pagina*/
+	width: 100%;
+	/* largura 100%*/
+}
+
+.conteudo-cadastro{
+	background: black;
+	opacity: 0.9;
+	/*---------  adicionando esta propriedade distacamos a área do login -------*/
+	border-radius: 0.4em;
+
+	/*	relaciona com a div que o encapsula */
+	position: relative;
+	/*	baixa o conteudo do div 100 pixels pra baixo */
+	top: 20px;
+	width: 500px;
+	/* aumenta ou diminui a largura da tela login*/
+	margin: 0px auto;
+	/*	centraliza */
+	padding: 50px;
+	/*--- aumenta ou diminui a distancia do topo ----*/
+	color: white;
+
+}
+
+.conteudo-padrao {
+	/*---------  adicionando esta propriedade distacamos a área do login -------*/
+	border-radius: 4em;
+	background: black;
+	opacity: 0.8;
+	/*	relaciona com a div que o encapsula */
+	position: relative;
+	/*	baixa o conteudo do div 100 pixels pra baixo */
+	top: 100px;
+	width: 550px;
+	/* aumenta ou diminui a largura da tela login*/
+	margin: 0px auto;
+	/*	centraliza */
+	padding: 100px;
+	/*--- aumenta ou diminui a distancia do topo ----*/
+	color: white;
+}
+
+a:link {
+	text-decoration: none;
+}
+
+.link {
+	color: white;
+}
+
+.link:hover {
+	color: crimson;
+}
+
+.loga {
+	float: right;
+}
+
+.loga:hover {
+	transition: 0.4s;
+	background: darkgreen;
+	color: white;
+}

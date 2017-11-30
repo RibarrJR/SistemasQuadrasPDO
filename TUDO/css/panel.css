@@ -1,0 +1,64 @@
+
+body,html {
+	background: #1E3809;
+	height:100%;
+	margin: 0;
+}
+.logotipo{
+	border-radius:0.9em;
+	width:80px;
+	height:80px;
+}
+.row li a{
+	transition:0.4s;
+	background:black;
+	border-radius:0.3em;
+	opacity:0.9;
+	display:block;
+	width:120px;
+	text-align: center;
+	padding:10px;
+	margin: 20px;
+	color: white;
+}
+.row li a:hover{
+	list-style:none;
+	text-decoration: none;
+	background:green;
+	color: white;
+}
+
+.conteudo-padrao {
+	/*---------  adicionando esta propriedade distacamos a área do login -------*/
+	border-radius: 0.4em;
+	background: black;
+	opacity: 0.7;
+	/*	relaciona com a div que o encapsula */
+	position: relative;
+	display:flex;
+	justify-content: center;
+	flex-direction: column;
+	/*	baixa o conteudo do div 100 pixels pra baixo */
+	top: 40px;
+	
+	/* aumenta ou diminui a largura da tela login*/
+	margin: 0px auto;
+	/*	centraliza */
+	padding:30px;
+	text-align: center;
+	/*--- aumenta ou diminui a distancia do topo ----*/
+	color: white;
+}
+.rodape{
+	margin-top:300px;
+	height:50px;
+	border-radius:0;
+}
+
+
+.sair li a{
+	width:60px;
+}
+.sair li a:hover{
+	background:red;
+}

@@ -1,0 +1,25 @@
+table {
+	margin-top: 40px;
+}
+
+th,
+td {
+	text-align: center;
+}
+
+.material-icons {
+	color: black;
+	transition: 0.4s;
+
+}
+
+
+.up:hover {
+	color: limegreen;
+
+
+}
+
+.down:hover {
+	color: red;
+}
