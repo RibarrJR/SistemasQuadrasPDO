@@ -1,6 +1,6 @@
 body {
 	background: #1E3849;
-	height: 900px;
+	height:1200px;
 	overflow: hidden;
 }
 
@@ -10,7 +10,7 @@ body {
 	background-image: url("../Img/estadio.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-position: 0px -200px;
+	background-position: -2px -400px;
 	height: 100%;
 	/* usamos pra estourar o limite da pagina*/
 	width: 100%;

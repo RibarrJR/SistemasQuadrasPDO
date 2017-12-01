@@ -51,10 +51,25 @@ public static function getList(){
 	
 public static function getHRAS($ADM){
 	$sql= new Sql();
-	return $resp=$sql->select("SELECT ID_hr, hr_start,hr_fim,usuario.login, quadra.nome FROM gerencia_quadras,quadra,horarios,horarios_marcados,usuario WHERE gerencia_quadras.id_adm =:ADM and quadra.id_local=gerencia_quadras.id_local and quadra.id_quadra=horarios.id_quadra and horarios.ID_hr=horarios_marcados.id_hora and horarios_marcados.maracado_por=usuario.id_user and horarios.status=1 order by horarios.hr_start",array(
+	return $resp=$sql->select("SELECT ID_hr, hr_start,hr_fim,usuario.login, quadra.nome FROM gerencia_quadras,quadra,horarios,horarios_marcados,usuario WHERE gerencia_quadras.id_adm =:ADM and quadra.id_local=gerencia_quadras.id_local and quadra.id_quadra=horarios.id_quadra and horarios.ID_hr=horarios_marcados.id_hora and horarios_marcados.maracado_por=usuario.id_user and horarios.status=3 order by horarios.hr_start",array(
 		":ADM"=>$ADM
 	));
 	}
+public function marcar($id_hr){
+	$sql =new Sql();
+	$sql ->query("UPDATE horarios SET status=3 WHERE ID_hr=:ID",array(
+		":ID"=>$id_hr
+		));
+}
+	
+public function marcado_por($id_user,$id_hr){
+	$sql =new Sql();
+	$sql ->query("INSERT INTO horarios_marcados (id_hora,maracado_por, confirmado_por) VALUES (:IDHR, :IDUSER, NULL);",array(
+		"IDUSER"=>$id_user,
+		"IDHR"=>$id_hr
+	));
+	
+}
 	
 public function confirmar($status,$id_hr){
 	$sql =new Sql();
@@ -72,10 +87,10 @@ public function confirmado_por($id_user,$id_hr){
 	
 }
 	
-public static function loadByDisp($status){
+public static function loadByDisp($id_quadra){
 	$sql =new Sql();
-	return $sql -> select("SELECT * FROM horarios WHERE status=:STATUS",array(
-		":STATUS"=>$status
+	return $sql -> select("SELECT horarios.ID_hr,horarios.hr_start, horarios.hr_fim FROM horarios,quadra WHERE horarios.status=1 and horarios.id_quadra=quadra.ID_quadra and quadra.ID_quadra=:QUADRA",array(
+		":QUADRA"=>$id_quadra
 	));
 }
 	

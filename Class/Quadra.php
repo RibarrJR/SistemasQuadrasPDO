@@ -17,7 +17,7 @@ public function setID_quadra($value){
 	$this->ID_quadra = $value;
 }
 public function getNome(){
-	return $this->Nome;
+	return $this->nome;
 }
 public function setNome($value){
 	$this->nome = $value;
@@ -45,6 +45,12 @@ public function setDescricao($value){
 public static function getList(){
 	$sql= new Sql();
 	return $sql->select("SELECT * FROM quadra order by ID_quadra");
+}
+	
+public static function getList_local($id){
+	$sql= new Sql();
+	return $sql->select("SELECT quadra.nome, quadra.ID_quadra FROM local,quadra WHERE cidade=:ID and local.ID_local=quadra.id_local",array(
+		':ID'=>$id));
 }
 public static function search($Nome){
 	$sql = new Sql();

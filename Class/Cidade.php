@@ -30,7 +30,7 @@ public function setNome($value){
 	// methods 
 public static function getList(){
 	$sql= new Sql();
-	return $sql->select("SELECT * FROM cidade order by id_city");
+	return $sql->select("SELECT * FROM cidade order by Nome");
 }
 public static function search($Nome){
 	$sql = new Sql();

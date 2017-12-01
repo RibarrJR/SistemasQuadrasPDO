@@ -33,10 +33,10 @@
 session_start();
 if(isset($_GET['er'])){
 	if($_GET['er']==1){	
+		unset($_SESSION);
 		session_destroy();
-		unset($_SESSION);}
+	}
 	if($_GET['er']==2){	?>
-
 				<div class="form-group">
 					<div class="alert alert-danger vali" role="alert">
 						Senha ou login invalidos
@@ -44,7 +44,7 @@ if(isset($_GET['er'])){
 				</div>
 				<?php
 	}
-if($_GET['er']==3){ ?>
+	if($_GET['er']==3){ ?>
 				<div class="form-group">
 					<div class="alert alert-danger vali" role="alert">
 						Informe Login e Senha

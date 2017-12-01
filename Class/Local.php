@@ -47,6 +47,7 @@ public static function getList(){
 	$sql= new Sql();
 	return $sql->select("SELECT * FROM local order by ID_local");
 }
+
 public static function search($Nome){
 	$sql = new Sql();
 	return $sql->select("SELECT * FROM local WHERE nome_local LIKE :SEARCH ORDER BY nome_local",array(

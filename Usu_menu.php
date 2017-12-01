@@ -5,9 +5,9 @@
 	</ul>
 	<ul class="row  ">
 	
-		<li class="item-menu"><a href="Adm_control-panel.php">Início</a></li>
-		<li class="item-menu"><a href="Adm_horarios.php">Horarios</a></li>
-		<li class="item-menu"><a href="adm.php">Administração</a></li>
+		<li class="item-menu"><a href="Usu_control-panel.php">Início</a></li>
+		<li class="item-menu"><a href="Usu_reserva1.php">Reservar</a></li>
+		<li class="item-menu"><a href="Usu_perfil.php">Perfil</a></li>
 	</ul>
 	<ul class="row sair">
 		<li class="item-menu"><a href="index.php?er=1">Sair</a></li>

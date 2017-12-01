@@ -65,7 +65,6 @@ else{
 	header("location:index.php");
 }
 
-include("rodape.php");
 ?>
 
 
