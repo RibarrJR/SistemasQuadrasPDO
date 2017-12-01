@@ -1,11 +1,13 @@
 <?php
-require_once("Adm_headerLogin.php");
+require_once("headerCadastra.php");
+
+
 
 ?>
 <body>
 	<div class="main">
 		<div class="conteudo-cadastro">
-			<form method="post" action="usuario_cadastra.php">
+			<form method="post" action="cadastra_usuario.php">
 				<div class="form-group">
 					<label for="login">Login</label>
 					<input type="text" class="form-control" id="login" name="login" placeholder="Digite o Login">
@@ -33,8 +35,44 @@ require_once("Adm_headerLogin.php");
 					<button type="submit" class="loga btn btn ">Enviar</button>
 				</div>
 			</form>
+			<?php
+			if(isset($_GET['err'])){
+	if($_GET["er"]==1){
+		
+		?>
+		
+		<div class="container form-group">
+	<div class="row"><div class="d-flex justify-content-center alert alert-warning align-middle" role="alert">
+  campo vazio, preencha todo os campos!
+  <a href="index.php"><span>Voltar</span></a>
+  </div>
+  </div>
+</div>
+		
+		<?php
+	}
+	if($_GET["er"]==2){
+		
+	?>
+	
+	<div class="container">
+	<div class="row"><div class="d-flex justify-content-center alert alert-danger align-middle" role="alert">
+  Senha não Coincide !
+  <a href="index.php"><span>Voltar</span></a>
+  </div>
+  </div>
+</div>
+	<?php	
+		
+	}
+		
+	}
+	
+	
+		?>	
 		</div>
 	</div>
+	
 </body>
 
 </html>
