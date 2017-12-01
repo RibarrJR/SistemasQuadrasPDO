@@ -6,7 +6,7 @@ if(isset($_POST['id_quadra'])){
 	$_SESSION['id_quadra']=$idq;
 	
 }
-	echo $_SESSION["id_quadra"];
+	
 if(isset($_SESSION['id_quadra'])){
 	$idq=$_SESSION['id_quadra'];
 include("Usu_header.php");

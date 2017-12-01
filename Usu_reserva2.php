@@ -6,7 +6,7 @@ if(isset($_POST['id_city'])){
 	$id=$_POST['id_city'];
 	$_SESSION['id_city']=$id;
 	
-echo $_SESSION['id_city'];
+
 }
 if(isset($_SESSION['id_city'])){
 	$id=$_SESSION['id_city'];

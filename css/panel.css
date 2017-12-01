@@ -1,12 +1,36 @@
 body,html {
 	background: #1E3809;
 	height:100%;
+	
 }
 
 .logotipo{
 	border-radius:0.9em;
 	width:80px;
 	height:80px;
+}
+.conteudo-perfil{
+	background: black;
+	
+	opacity: 0.9;
+	/*---------  adicionando esta propriedade distacamos a área do login -------*/
+	border-radius: 0.4em;
+
+	/*	relaciona com a div que o encapsula */
+	position: relative;
+	/*	baixa o conteudo do div 100 pixels pra baixo */
+	top: 15px;
+	width: 500px;
+	/* aumenta ou diminui a largura da tela login*/
+	margin: 0px auto;
+	/*	centraliza */
+	padding: 50px;
+	/*--- aumenta ou diminui a distancia do topo ----*/
+	color: white;
+
+}
+.loga {
+	float: right;
 }
 
 .row li a{
