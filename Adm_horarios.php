@@ -15,7 +15,10 @@ include("Adm_menu.php");
 			<tr>
 				<th scope="col"><span>#</span></th>
 				<th  scope="col" class=""><img src="Img/icons/user.png"data-toggle="tooltip" data-placement="top" title="Cliente"></th>
+				<th scope="col"><img src="Img/icons/location.png" data-toggle="tooltip" data-placement="top" title="Quadra"><img/></th>
 				<th scope="col"><img src="Img/icons/inicios_1x.png" data-toggle="tooltip" data-placement="top" title="Inicio Do horario"><img/></th>
+				
+				
 				<th scope="col"><img src="Img/icons/fins_1x.png" data-toggle="tooltip" data-placement="top" title="Fim do horario"></th>
 				<th  scope="col"><img src="Img/icons/info.png" data-toggle="tooltip" data-placement="top" title="Opções"></th>
 				
@@ -38,6 +41,7 @@ foreach($objeto_php as $key =>$colecao){
 	<?php
 	echo "<td>".$i."</td>";
 	echo "<td>".$colecao->login."</td>";
+	echo "<td>".$colecao->nome."</td>";
 	echo "<td>".$colecao->hr_start."</td>";
 	echo "<td>".$colecao->hr_fim."</td>";
 	?>

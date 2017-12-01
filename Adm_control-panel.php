@@ -6,13 +6,7 @@ require_once("config.php");
 $id=$_SESSION["user_id"];
 include("Adm_header.php");
 include("Adm_menu.php");
-?>
-	<div class="jumbotron jumbotron-fluid">
-		<div class="container">
-			<h1 class="display-4"> Bem-Vindo, <?php echo $_SESSION['user_name'];
-			 ?>!</h1>
-			<p class="lead">Você tem <a href="Adm_horarios.php"><button type="button" class="btn btn-success"> <span class="badge badge-light"><?php
-$hr = Horario::getHRAS($id);
+	$hr = Horario::getHRAS($id);
 $obj= json_encode($hr);
 $objeto_php = json_decode($obj);
 		
@@ -20,10 +14,12 @@ $objeto_php = json_decode($obj);
 foreach($objeto_php as $key =>$colecao){
 	$i++;
 }
-	echo $i;
-	
-	
-				?></span>
+?>
+	<div class="jumbotron jumbotron-fluid">
+		<div class="container">
+			<h1 class="display-4"> Bem-Vindo, <?php echo $_SESSION['user_name'];
+			 ?>!</h1>
+			<p class="lead">Você tem <a href="Adm_horarios.php"><button type="button" class="btn btn-<?php if($i==0){echo "success";}else{echo "warning";}?> "> <span class="badge badge-light"><?php echo $i; ?></span>
   
 </button></a> notificações ! </p>
 		</div>

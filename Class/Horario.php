@@ -51,7 +51,7 @@ public static function getList(){
 	
 public static function getHRAS($ADM){
 	$sql= new Sql();
-	return $resp=$sql->select("SELECT ID_hr, hr_start,hr_fim,usuario.login FROM gerencia_quadras,quadra,horarios,horarios_marcados,usuario WHERE gerencia_quadras.id_adm =:ADM and quadra.id_local=gerencia_quadras.id_local and quadra.id_quadra=horarios.id_quadra and horarios.ID_hr=horarios_marcados.id_hora and horarios_marcados.maracado_por=usuario.id_user and horarios.status=1",array(
+	return $resp=$sql->select("SELECT ID_hr, hr_start,hr_fim,usuario.login, quadra.nome FROM gerencia_quadras,quadra,horarios,horarios_marcados,usuario WHERE gerencia_quadras.id_adm =:ADM and quadra.id_local=gerencia_quadras.id_local and quadra.id_quadra=horarios.id_quadra and horarios.ID_hr=horarios_marcados.id_hora and horarios_marcados.maracado_por=usuario.id_user and horarios.status=1 order by horarios.hr_start",array(
 		":ADM"=>$ADM
 	));
 	}
