@@ -1,5 +1,4 @@
-
-	<?php
+<?php
 session_start();
 if(!isset($_GET['nops'])){
 if($_SESSION['logged_inA']==true){
@@ -15,22 +14,22 @@ foreach($objeto_php as $key =>$colecao){
 	$i++;
 }
 ?>
-<body>
-	<div class="jumbotron jumbotron-fluid">
-		<div class="container">
-			<h1 class="display-4"> Bem-Vindo, <?php echo $_SESSION['user_name'];
+
+	<body>
+		<div class="jumbotron jumbotron-fluid">
+			<div class="container">
+				<h1 class="display-4"> Bem-Vindo,
+					<?php echo $_SESSION['user_name'];
 			 ?>!</h1>
-			<p class="lead">Você tem <a href="Adm_horarios.php"><button type="button" class="btn btn-<?php if($i==0){echo "success";}else{echo "warning";}?> "> <span class="badge badge-light"><?php echo $i; ?></span>
+				<p class="lead">Você tem <a href="Adm_horarios.php"><button type="button" class="btn btn-<?php if($i==0){echo "success";}else{echo "warning";}?> "> <span class="badge badge-light"><?php echo $i; ?></span>
   
 </button></a> notificações ! </p>
-	
+
+			</div>
+
 		</div>
-		
-	</div>
 
-
-
-	<?php
+		<?php
 	}
 	else{
 	
@@ -41,10 +40,10 @@ else{
 	echo "CU";
 }
 	?>
-	<div class="rodape">
-	<h5>Todos os direitos reservados</h5>
-</div>
-</body>
+			<div class="rodape">
+				<h5>Todos os direitos reservados</h5>
+			</div>
+	</body>
 
 
-</html>
+	</html>

@@ -11,11 +11,9 @@ body,html {
 }
 .conteudo-perfil{
 	background: black;
-	
 	opacity: 0.9;
 	/*---------  adicionando esta propriedade distacamos a área do login -------*/
 	border-radius: 0.4em;
-
 	/*	relaciona com a div que o encapsula */
 	position: relative;
 	/*	baixa o conteudo do div 100 pixels pra baixo */
