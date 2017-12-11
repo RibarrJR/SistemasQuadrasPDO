@@ -1,4 +1,4 @@
-
+<!--AREA DE TESTES -->
 
 <?php
 require_once("config.php");

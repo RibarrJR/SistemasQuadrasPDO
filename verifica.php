@@ -26,17 +26,17 @@ if(isset($_SESSION['logged_in'])){
 				$hr= new Horario();
 				$hr->confirmar($status,$hrID);
 				$hr->confirmado_por($userID,$hrID);
-				header("location:Adm_horarios.php");
+				header("location:ADM/Adm_horarios.php");
 			}
 			else{
 				$status=2;
 				$hr= new Horario();
 				$hr->confirmar($status,$hrID,$userID);
 				$hr->confirmado_por($userID,$hrID);
-				header("location:Adm_horarios.php");
+				header("location:ADM/Adm_horarios.php");
 			}
 		}else{
-			header("location:Adm_control-panel.php");
+			header("location:ADM/Adm_control-panel.php");
 		}
 	}
 else{
@@ -52,7 +52,7 @@ else{
 			$responseA = $usuario->loginA($login,$senha);
 			if($responseU==true){
 				$_SESSION['logged_in']=true;
-			header("location:Usu_control-panel.php");
+			header("location:USU/Usu_control-panel.php");
 			$_SESSION['user_name']=$usuario->getLogin();
 			$_SESSION['user_id']=$usuario->getID();
 			}
@@ -61,7 +61,7 @@ else{
 					$_SESSION['logged_inA']=true;
 					$_SESSION['user_name']=$usuario->getLogin();
 					$_SESSION['user_id']=$usuario->getID();
-					header("location:Adm_control-panel.php");
+					header("location:ADM/Adm_control-panel.php");
 				}
 				else{
 				$_SESSION['logged_inA']==false;

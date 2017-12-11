@@ -1,6 +1,8 @@
 <?php 
 session_start();
-require("config.php");
+require("../config.php");
+require("../Class/Cidade.php");
+require("../Class/Sql.php");
 if($_SESSION['logged_in']==true){
 unset($_SESSION["id_city"]);
 $city = Cidade::getList();
@@ -31,7 +33,7 @@ foreach($objeto_php as $key=>$colecao){
 </body>
 <?php
 }else{
-header("location:index.php?er=1");
+header("location:../index.php?er=1");
 }
 
 ?>

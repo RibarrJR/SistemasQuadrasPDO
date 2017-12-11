@@ -1,5 +1,7 @@
 <?php 
 session_start();
+require_once("../Class/Horario.php");
+require_once("../Class/SQL.php");
 if($_SESSION['logged_inA']==true){
 	
 $id=$_SESSION["user_id"];
@@ -14,20 +16,20 @@ include("Adm_menu.php");
 		<thead class="thead-dark">
 			<tr>
 				<th scope="col"><span>#</span></th>
-				<th  scope="col" class=""><img src="Img/icons/user.png"data-toggle="tooltip" data-placement="top" title="Cliente"></th>
-				<th scope="col"><img src="Img/icons/location.png" data-toggle="tooltip" data-placement="top" title="Quadra"><img/></th>
-				<th scope="col"><img src="Img/icons/inicios_1x.png" data-toggle="tooltip" data-placement="top" title="Inicio Do horario"><img/></th>
+				<th  scope="col" class=""><img src="../Img/icons/user.png"data-toggle="tooltip" data-placement="top" title="Cliente"></th>
+				<th scope="col"><img src="../Img/icons/location.png" data-toggle="tooltip" data-placement="top" title="Quadra"><img/></th>
+				<th scope="col"><img src="../Img/icons/inicios_1x.png" data-toggle="tooltip" data-placement="top" title="Inicio Do horario"><img/></th>
 				
 				
-				<th scope="col"><img src="Img/icons/fins_1x.png" data-toggle="tooltip" data-placement="top" title="Fim do horario"></th>
-				<th  scope="col"><img src="Img/icons/info.png" data-toggle="tooltip" data-placement="top" title="Opções"></th>
+				<th scope="col"><img src="../Img/icons/fins_1x.png" data-toggle="tooltip" data-placement="top" title="Fim do horario"></th>
+				<th  scope="col"><img src="../Img/icons/info.png" data-toggle="tooltip" data-placement="top" title="Opções"></th>
 				
 			</tr>
 		</thead>
 		<tbody>
 
 				<?php  
-			require_once("config.php");
+			require_once("../config.php");
 $hr = Horario::getHRAS($id);
 $obj= json_encode($hr);
 $objeto_php = json_decode($obj);
@@ -62,7 +64,7 @@ foreach($objeto_php as $key =>$colecao){
 </div>
 <?php }
 else{
-	header("location:index.php");
+	header("location:../index.php");
 }
 
 ?>

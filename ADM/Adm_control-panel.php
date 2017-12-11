@@ -1,8 +1,11 @@
 <?php
 session_start();
+require_once("../Class/Horario.php");
+require_once("../Class/SQL.php");
+
 if(!isset($_GET['nops'])){
 if($_SESSION['logged_inA']==true){
-require_once("config.php");
+include("../config.php");
 $id=$_SESSION["user_id"];
 include("Adm_header.php");
 include("Adm_menu.php");
@@ -33,7 +36,7 @@ foreach($objeto_php as $key =>$colecao){
 	}
 	else{
 	
-	header("location:index.php");	
+	header("location:../index.php");	
 	}
 	}
 else{

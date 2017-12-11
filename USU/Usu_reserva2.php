@@ -1,6 +1,8 @@
 <?php 
 session_start();
-require("config.php");
+require("../config.php");
+require("../Class/Quadra.php");
+require("../Class/Sql.php");
 if($_SESSION['logged_in']==true){
 if(isset($_POST['id_city'])){
 	$id=$_POST['id_city'];
@@ -45,7 +47,7 @@ foreach($objeto_php as $key=>$colecao){
 	header("location:Usu_reserva1.php");
 }
 }else{
-header("location:index.php?er=1");
+header("location:../index.php?er=1");
 }
 
 ?>

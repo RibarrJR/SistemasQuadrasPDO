@@ -10,6 +10,6 @@
 		<li class="item-menu"><a href="adm.php">Administração</a></li>
 	</ul>
 	<ul class="row sair">
-		<li class="item-menu"><a href="index.php?er=1">Sair</a></li>
+		<li class="item-menu"><a href="../index.php?er=1">Sair</a></li>
 	</ul>
 </nav>
