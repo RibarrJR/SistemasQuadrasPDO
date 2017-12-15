@@ -11,9 +11,9 @@ if(isset($_SESSION['logged_in'])){
    $hr= new Horario();
    $hr->marcar($hrID);
    $hr->marcado_por($userID,$hrID);
-   header("location:Usu_reserva3.php");
+   header("location:USU/Usu_reserva3.php");
 	 }else{
-	 	header("location:Usu_reserva3.php");
+	 	header("location:USU/Usu_reserva3.php");
 	 }
 }else{
 
@@ -22,7 +22,7 @@ if(isset($_SESSION['logged_in'])){
 			$hrID=$_GET['ID_hra'];	
 			$userID=$_SESSION["user_id"];
 			if($_GET['confirma']==0){
-				$status=0;
+				$status=1;
 				$hr= new Horario();
 				$hr->confirmar($status,$hrID);
 				$hr->confirmado_por($userID,$hrID);
@@ -73,6 +73,11 @@ else{
 	}
 	}
 }
+
+
+
+
+
 
 
 ?>

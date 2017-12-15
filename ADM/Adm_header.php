@@ -3,7 +3,8 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>$variavel</title>
+	<title>Olá,
+		<?php echo $_SESSION['user_name'];?></title>
 	<link rel="icon" href="">
 	<link rel="stylesheet" href="../css/reset.css">
 	<!--	link usando sistema de arquivos -->

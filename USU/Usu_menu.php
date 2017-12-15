@@ -1,7 +1,7 @@
 <nav class="navbar navbar-white bg-warning container-fluid justify-content-between">
 
 	<ul>
-		<li><a href="Adm_control-panel.php"><img class="logotipo" src="../Img/logo.png" alt=""></a></li>
+		<li><a href="Usu_control-panel.php"><img class="logotipo" src="../Img/logo.png" alt=""></a></li>
 	</ul>
 	<ul class="row  ">
 

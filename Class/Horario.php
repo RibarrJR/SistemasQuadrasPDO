@@ -61,14 +61,31 @@ public function marcar($id_hr){
 		":ID"=>$id_hr
 		));
 }
-	
+
+public static function verifica_por_status($status,$id_user){
+	$sql =new Sql();
+	return $resp=$sql->select("SELECT ID_hr, hr_start,hr_fim,usuario.login, quadra.nome  from gerencia_quadras,quadra,horarios,horarios_marcados,usuario WHERE gerencia_quadras.id_adm =:ADM and quadra.id_local=gerencia_quadras.id_local and quadra.id_quadra=horarios.id_quadra and horarios.ID_hr=horarios_marcados.id_hora and horarios_marcados.maracado_por=usuario.id_user and horarios.status=:STATUS order by horarios.hr_start",array(
+		":STATUS"=>$status,
+		":ADM"=>$id_user
+		));
+}
+
+public static function verifica_por_statusUSU($status,$id_user){
+	$sql =new Sql();
+	return $resp=$sql->select("SELECT horarios.ID_hr,horarios.hr_start,horarios.hr_fim,quadra.nome FROM horarios,quadra,horarios_marcados WHERE horarios_marcados.maracado_por=:ID and horarios.ID_hr=horarios_marcados.id_hora AND quadra.ID_quadra=horarios.id_quadra and horarios.status=:STATUS and quadra.ID_quadra=horarios.id_quadra;",array(
+		":STATUS"=>$status,
+		":ID"=>$id_user
+		));
+}
+
+
+
 public function marcado_por($id_user,$id_hr){
 	$sql =new Sql();
 	$sql ->query("INSERT INTO horarios_marcados (id_hora,maracado_por, confirmado_por) VALUES (:IDHR, :IDUSER, NULL);",array(
 		"IDUSER"=>$id_user,
 		"IDHR"=>$id_hr
 	));
-	
 }
 	
 public function confirmar($status,$id_hr){
@@ -89,7 +106,7 @@ public function confirmado_por($id_user,$id_hr){
 	
 public static function loadByDisp($id_quadra){
 	$sql =new Sql();
-	return $sql -> select("SELECT horarios.ID_hr,horarios.hr_start, horarios.hr_fim FROM horarios,quadra WHERE horarios.status=1 and horarios.id_quadra=quadra.ID_quadra and quadra.ID_quadra=:QUADRA",array(
+	return $sql -> select("SELECT horarios.ID_hr,horarios.hr_start, horarios.hr_fim FROM horarios,quadra WHERE horarios.status=0 and horarios.id_quadra=quadra.ID_quadra and quadra.ID_quadra=:QUADRA",array(
 		":QUADRA"=>$id_quadra
 	));
 }
@@ -109,13 +126,23 @@ public function loadById($id){
 	}   
 }
 
+
+
 public function setData($data){
-	
 		$this->setIDquadra($data ['id_quadra']);
 		$this->setStatus($data ['status']);	
 		$this->setHr_start($data ['hr_start']);	
 		$this->setHr_fim($data ['hr_fim']);	
 		$this->setID_hr($data ['ID_hr']);	
 }
-}
+public function deleteMarcado($id_hora){
+	$sql= new Sql();
+	$sql->query("DELETE FROM horarios_marcados WHERE id_hora=:ID",array(
+		':ID'=> $id_hora
+		));	
+		
+	}
 	
+
+}
+

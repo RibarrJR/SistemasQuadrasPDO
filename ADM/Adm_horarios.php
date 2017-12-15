@@ -48,8 +48,8 @@ foreach($objeto_php as $key =>$colecao){
 	echo "<td>".$colecao->hr_fim."</td>";
 	?>
 
-	<td ><a href="verifica.php?confirma=0&ID_hra=<?php echo $colecao->ID_hr; ?>" data-toggle="tooltip" data-placement="left" title="Aceitar!"><i style="font-size:36px;" class="material-icons md-36 up" >thumb_up</i></a>
-		<a href="verifica.php?confirma=2&ID_hra=<?php echo $colecao->ID_hr; ?>" data-toggle="tooltip" data-placement="right" title="Recusar!" ><i  style="font-size:36px;" class="material-icons md-36 down">thumb_down</i></a>
+	<td ><a href="../verifica.php?confirma=0&ID_hra=<?php echo $colecao->ID_hr; ?>" data-toggle="tooltip" data-placement="left" title="Aceitar!"><i style="font-size:36px;" class="material-icons md-36 up" >thumb_up</i></a>
+		<a href="../verifica.php?confirma=2&ID_hra=<?php echo $colecao->ID_hr; ?>" data-toggle="tooltip" data-placement="right" title="Recusar!" ><i  style="font-size:36px;" class="material-icons md-36 down">thumb_down</i></a>
 				</td>
 			</tr>
 		
